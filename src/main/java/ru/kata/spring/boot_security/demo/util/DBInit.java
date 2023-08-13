@@ -1,7 +1,6 @@
 package ru.kata.spring.boot_security.demo.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Component;
 import ru.kata.spring.boot_security.demo.model.Role;
 import ru.kata.spring.boot_security.demo.model.User;
@@ -37,8 +36,8 @@ public class DBInit {
         adminSet.add(roleUser);
         adminSet.add(roleAdmin);
 
-        User newUser = new User("James", "Bond", (byte)30, "agent", "JB007", userSet);
-        User admin = new User("Max", "Payne", (byte)45, "admin", "admin", adminSet);
+        User newUser = new User("James", "Bond", (byte) 30, "agent", "JB007", userSet);
+        User admin = new User("Max", "Payne", (byte) 45, "admin", "admin", adminSet);
         userService.saveUser(newUser);
         userService.saveUser(admin);
     }

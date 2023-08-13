@@ -42,7 +42,8 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "roleid"))
     private Set<Role> roles = new HashSet<>();
 
-    public User() {}
+    public User() {
+    }
 
     public User(String name, String lastname, Byte age, String username, String password, Set<Role> roles) {
         this.name = name;
@@ -111,7 +112,9 @@ public class User implements UserDetails {
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {return roles;}
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles;
+    }
 
 
     @Override
